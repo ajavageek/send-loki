@@ -19,3 +19,12 @@ services:
       - "3000:3000"
     depends_on:
       - loki
+  app:
+    build: .
+    logging:
+      driver: loki
+      options:
+        loki-external-labels: container_name={{.Name}},app=demo
+        loki-url: http://localhost:3100/loki/api/v1/push
+    depends_on:
+      - loki

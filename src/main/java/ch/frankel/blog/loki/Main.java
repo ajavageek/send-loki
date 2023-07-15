@@ -8,7 +8,7 @@ public class Main {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class.toString());
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         String who;
         if (args.length == 0) {
             who = "Java app";
@@ -16,6 +16,5 @@ public class Main {
             who = args[0];
         }
         LOGGER.info("Hello from {}!", who);
-        Thread.sleep(5000);
     }
 }
